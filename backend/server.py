@@ -268,7 +268,7 @@ async def get_status_checks():
 @api_router.get("/youtube/channel-videos", response_model=ChannelVideosResponse)
 async def get_channel_videos(
     channel: str = Query(..., description="YouTube channel URL or ID"),
-    count: int = Query(..., ge=1, le=500, description="Number of videos to fetch (1-500)")
+    count: int = Query(..., ge=1, le=200, description="Number of videos to fetch (1-200)")
 ):
     try:
         channel_identifier = extract_channel_id(channel)
